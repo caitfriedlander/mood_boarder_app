@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  resources :users, only: [:new, :create, :show]
+
+  get 'profile/:id' => 'users#show', as: :profile
+
+  resources :favorite_boards, only: [:create, :destroy]
+
+  resources :boards
+
+  resources :sessions, only: [:new, :create, :destroy]
+  # Create a better looking URL for logging in
+  get '/login', to: 'sessions#new'
+  # post 'login', to: 'sessions#create', as: 'newsession'
+  get '/logout' => 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

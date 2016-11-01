@@ -1,0 +1,10 @@
+<!-- Profile Page -->
+<p>
+  <% if current_user %>
+    This is your board, <%= current_user.username %>
+  <% else %>
+<%= @user.username %>'s board, <%= board.title %>
+  <% end %>
+</p>
+
+<div>Here is the board</div>

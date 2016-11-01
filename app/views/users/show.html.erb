@@ -1,0 +1,21 @@
+<!-- Profile Page -->
+<p>
+  <% if current_user %>
+    This is your profile, <%= current_user.username %>
+  <% else %>
+    <%= @user.username %>
+  <% end %>
+</p>
+
+
+<div>Here is the info</div>
+<div>Here are the links to faves</div>
+<div>here are the boards</div>
+
+<ul>
+  <% @boards.each do |board| %>
+   <li><%= board.board_title %></li>
+  <% end %>
+</ul>
+
+<button type=""><%= link_to 'New Board?', new_board_path %></button>
