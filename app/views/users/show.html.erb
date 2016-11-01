@@ -1,4 +1,5 @@
 <!-- Profile Page -->
+<%= image_tag(@user.avatar, size: "50x50", alt: "user avatar") %>
 <p>
   <% if current_user.id == @user.id %>
     This is your profile, <%= current_user.username %>
@@ -11,12 +12,14 @@
 <div>Here is the info</div>
 <button type=""><%= link_to 'Edit Profile', edit_user_path %></button>
 <div>Here are the links to faves</div>
-<div>here are the boards</div>
 
 <ul>
-  <% @user.boards do |board| %>
+  <% @user.boards.each do |board| %>
    <li><%= link_to(board.board_title, board_path) %></li>
   <% end %>
 </ul>
 
-<button type=""><%= link_to 'New Board', new_board_path %></button>
+  <% if current_user.id == @user.id %>
+   <button type=""><%= link_to 'New Board', new_board_path %></button>
+  <% end %>
+
