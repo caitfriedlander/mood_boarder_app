@@ -9,13 +9,14 @@
 
 
 <div>Here is the info</div>
+<button type=""><%= link_to 'Edit Profile', edit_user_path %></button>
 <div>Here are the links to faves</div>
 <div>here are the boards</div>
 
 <ul>
-  <% @boards.each do |board| %>
+  <% @user.boards do |board| %>
    <li><%= link_to(board.board_title, board_path) %></li>
   <% end %>
 </ul>
 
-<button type=""><%= link_to 'New Board?', new_board_path %></button>
+<button type=""><%= link_to 'New Board', new_board_path %></button>

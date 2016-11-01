@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :users, only: [:new, :create, :show, :index]
+  resources :users
 
   get 'board/:id' => 'boards#destroy', as: :delete
 

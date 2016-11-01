@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
 
   # Verify that an email exists and that it does not already exist in the db
   validates :email, presence: true, uniqueness: true
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, on: :create
 end
