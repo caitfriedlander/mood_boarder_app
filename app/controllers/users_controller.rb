@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   def new
+  def new
     @user = User.new
   end
 
@@ -18,17 +18,8 @@ class UsersController < ApplicationController
     @boards = @user.boards
   end
 
-  def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-    end
-  end
-
-
-  def authorize
-    if current_user.nil?
-      redirect_to login_path, alert: 'Not authorized - you must be logged in!'
-    end
+  def index
+    @users = User.all
   end
 
   private

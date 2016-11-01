@@ -1,10 +1,12 @@
-<!-- Profile Page -->
+<div><%= @board.board_title %></div>
+<div>Here is the board</div>
 <p>
-  <% if current_user %>
-    This is your board, <%= current_user.username %>
+  <% if current_user.id == @user.id %>
+    <button type=""><%= link_to 'Edit', edit_board_path %></button>
+    <button type=""><%= link_to 'Delete', delete_path %></button>
   <% else %>
-<%= @user.username %>'s board, <%= board.title %>
+    <button type=""><%= link_to 'Favorite', favorite_boards_path %></button>
   <% end %>
 </p>
 
-<div>Here is the board</div>
+

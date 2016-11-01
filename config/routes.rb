@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :index]
 
-  get 'profile/:id' => 'users#show', as: :profile
+  get 'board/:id' => 'boards#destroy', as: :delete
 
   resources :favorite_boards, only: [:create, :destroy]
 

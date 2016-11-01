@@ -1,7 +1,6 @@
 class BoardsController < ApplicationController
-  # before_action :set_board, only: [:show, :edit, :update, :destroy]
-  # #  add the line below
-  # before_action :authorize, except: [:index, :show]
+  before_action :set_board, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:index, :show]
 
   # GET /boards
   def index
@@ -11,6 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   def show
     @board = Board.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   # GET /boards/new
@@ -51,22 +51,18 @@ class BoardsController < ApplicationController
   end
 
   # DELETE /boards/1
-  # DELETE /boards/1.json
   def destroy
     @board.destroy
     respond_to do |format|
-      format.html { redirect_to houses_url, notice: 'Board was successfully destroyed.' }
+      format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_board
       @board = Board.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def board_params
       params.require(:board).permit(:board_title, :user_id)
     end

@@ -1,6 +1,6 @@
 <!-- Profile Page -->
 <p>
-  <% if current_user %>
+  <% if current_user.id == @user.id %>
     This is your profile, <%= current_user.username %>
   <% else %>
     <%= @user.username %>
@@ -14,7 +14,7 @@
 
 <ul>
   <% @boards.each do |board| %>
-   <li><%= board.board_title %></li>
+   <li><%= link_to(board.board_title, board_path) %></li>
   <% end %>
 </ul>
 
