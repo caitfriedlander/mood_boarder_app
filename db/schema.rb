@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 20161031213509) do
 
   create_table "boards", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "board_title"
+    t.string   "title"
+    t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

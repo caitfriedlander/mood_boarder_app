@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:index, :show]
+  # before_action :set_board, only: [:show, :edit, :update, :destroy]
+  # before_action :authorize, except: [:index, :show]
 
   # GET /boards
   def index
@@ -58,11 +58,11 @@ class BoardsController < ApplicationController
   end
 
   private
-    def set_board
-      @board = Board.find(params[:id])
-    end
+    # def set_board
+    #   @board = Board.find(params[:id])
+    # end
     def board_params
-      params.require(:board).permit(:board_title, :user_id)
+      params.require(:board).permit(:title, :description, :user_id)
     end
 
 end

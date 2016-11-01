@@ -1,21 +1,19 @@
 <!-- Profile Page -->
-<%= image_tag(@user.avatar, size: "50x50", alt: "user avatar") %>
+<div><%= image_tag(@user.avatar, size: "50x50", alt: "user avatar") %>
+<%= @user.username %></div>
+<div>Here is the info</div>
 <p>
   <% if current_user.id == @user.id %>
-    This is your profile, <%= current_user.username %>
-  <% else %>
-    <%= @user.username %>
+    <button type=""><%= link_to 'Edit Profile', edit_user_path %></button>
   <% end %>
 </p>
 
+<div>FAVES</div>
 
-<div>Here is the info</div>
-<button type=""><%= link_to 'Edit Profile', edit_user_path %></button>
-<div>Here are the links to faves</div>
-
+<div>BOARDS</div>
 <ul>
   <% @user.boards.each do |board| %>
-   <li><%= link_to(board.board_title, board_path) %></li>
+   <li><%= link_to(board.title, board_path) %></li>
   <% end %>
 </ul>
 

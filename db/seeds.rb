@@ -9,6 +9,10 @@ User.destroy_all
 Board.destroy_all
 Image.destroy_all
 
+User.create(username: "Cait1", password: 'abc123',
+      password_confirmation: 'abc123', email: "cati@cait.com",
+      name: "Cait", avatar: Faker::Avatar.image("my-own-slug", "50x50"))
+
 100.times do
     User.create(username: Faker::Internet.user_name, password: 'abc123',
       password_confirmation: 'abc123', email: Faker::Internet.email,
@@ -16,5 +20,5 @@ Image.destroy_all
 end
 
 500.times do
-    Board.create(user_id: Faker::Number.between(1, 206), board_title: Faker::Hipster.word)
+    Board.create(user_id: Faker::Number.between(1, 305), title: Faker::Hipster.word, description: Faker::Hipster.sentences(1))
 end
