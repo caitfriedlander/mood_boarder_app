@@ -10,7 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   def show
     @board = Board.find(params[:id])
-    @user = User.find(params[:id])
+    @user = @board.user_id
   end
 
   # GET /boards/new
@@ -24,16 +24,14 @@ class BoardsController < ApplicationController
 
   # POST /boards
   def create
-    @board = Board.new(board_params)
-    @board.user_id = session[:user_id]
-    respond_to do |format|
-      if @board.save
-        format.html { redirect_to @board, notice: 'Board was successfully created.' }
-        format.json { render :show, status: :created, location: @board }
-      else
-        format.html { render :new }
-        format.json { render json: @board.errors, status: :unprocessable_entity }
-      end
+    # @board = Board.new(board_params)
+    # @board.user_id = session[:user_id]
+    @user = User.find(session[:user_id])
+    @board = @user.boards.new(board_params)
+    if @board.save
+      redirect_to board_path @board.id
+    else
+      render "new"
     end
   end
 

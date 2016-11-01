@@ -1,7 +1,7 @@
 class CreateBoards < ActiveRecord::Migration
   def change
     create_table :boards do |t|
-      t.string :user_id
+      t.integer :user_id
       t.string :board_title
 
       t.timestamps null: false

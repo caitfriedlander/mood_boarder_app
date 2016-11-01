@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20161031213509) do
   enable_extension "plpgsql"
 
   create_table "boards", force: :cascade do |t|
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "board_title"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20161031213509) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
-    t.string   "board_id"
+    t.integer  "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
-    t.string   "user_id"
-    t.string   "board_id"
+    t.integer  "user_id"
+    t.integer  "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161031213509) do
     t.string   "password_confirmation"
     t.string   "email"
     t.string   "name"
+    t.string   "avatar"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
