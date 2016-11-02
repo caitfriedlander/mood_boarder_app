@@ -3,11 +3,6 @@
 <%= form_for(@image, html: {multipart: true}, url: postimage_path) do |f| %>
 
   <div class="field">
-    <%= f.label "Paste Url" %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div>or</div>
-  <div class="field">
     <%= f.label "Upload Image" %><br>
     <%= f.file_field :image %>
   </div>

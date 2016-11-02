@@ -2,9 +2,10 @@
 <div><%= @board.description %></div>
 <div>
   <% @board.images.each do |image| %>
-    <div><%= image_tag(image.url, size: "300x300", alt: "mood board image") %></div>
+    <div><%= image_tag(image.image, size: "300x300", alt: "mood board image") %></div>
   <% end %>
 </div>
+<br>
 <p>
   <% if current_user && current_user.id == @user.to_i %>
   <button type=""><%= link_to 'Upload Images', addimage_path %></button>

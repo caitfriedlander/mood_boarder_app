@@ -7,7 +7,7 @@
               <!-- http://lorempixel.com/850/280/people/9/ -->
           </div>
           <div class="useravatar">
-              <%= image_tag(@user.avatar, size: "50x50", alt: "user avatar") %>
+              <%= image_tag @user.avatar.url(:thumb) %>
           </div>
           <br>
           <div class="card-info"> <span class="card-title"><%= @user.username %></span>
