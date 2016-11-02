@@ -12,7 +12,7 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     },
     :url =>':s3_domain_url',
-    :path => '/:class/:attachment/:id_partition/:style/:filename',
+    :path => '/:class/:attachment/:id_partition/:style/:filename'
   }
 
   config.serve_static_files = true
