@@ -1,7 +1,13 @@
 <div><%= @board.title %></div>
-<div>Here is the board</div>
+<div><%= @board.description %></div>
+<div>
+  <% @board.images.each do |image| %>
+    <div><%= image_tag(@image, alt: "mood board image") %></div>
+  <% end %>
+</div>
 <p>
-  <% if current_user.id == @user.to_i %>
+  <% if current_user && current_user.id == @user.to_i %>
+  <button type=""><%= link_to 'Upload Images', addimage_path %></button>
     <button type=""><%= link_to 'Edit', edit_board_path %></button>
     <button type=""><%= link_to 'Delete', delete_path %></button>
   <% else %>

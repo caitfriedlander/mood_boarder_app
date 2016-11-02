@@ -50,9 +50,10 @@ class BoardsController < ApplicationController
 
   # DELETE /boards/1
   def destroy
+    @board = Board.find(params[:id])
     @board.destroy
     respond_to do |format|
-      format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
+      format.html { redirect_to current_user, notice: 'Board was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

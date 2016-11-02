@@ -5,9 +5,17 @@ Rails.application.routes.draw do
 
   get 'board/:id' => 'boards#destroy', as: :delete
 
+  get 'board/:id/images/new' => 'images#new', as: :addimage
+
+  post 'board/:id/images' => 'images#create', as: :postimage
+
+  patch 'users/:id' => 'users#update', as: :updateusers
+
   resources :favorite_boards, only: [:create, :destroy]
 
   resources :boards
+
+  resources :images, only: [:new, :create, :destroy]
 
   resources :sessions, only: [:new, :create, :destroy]
   # Create a better looking URL for logging in

@@ -3,7 +3,7 @@
 <%= @user.username %></div>
 <div>Here is the info</div>
 <p>
-  <% if current_user.id == @user.id %>
+  <% if current_user && current_user.id == @user.id %>
     <button type=""><%= link_to 'Edit Profile', edit_user_path %></button>
   <% end %>
 </p>
@@ -13,11 +13,11 @@
 <div>BOARDS</div>
 <ul>
   <% @user.boards.each do |board| %>
-   <li><%= link_to(board.title, board_path) %></li>
+   <li><%= link_to(board.title, board_path(board.id)) %> <%= board.id %></li>
   <% end %>
 </ul>
 
-  <% if current_user.id == @user.id %>
+  <% if current_user && current_user.id == @user.id %>
    <button type=""><%= link_to 'New Board', new_board_path %></button>
   <% end %>
 

@@ -38,7 +38,7 @@ gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'pry-rails'

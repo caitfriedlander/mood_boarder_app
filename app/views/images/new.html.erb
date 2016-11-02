@@ -1,0 +1,15 @@
+<h1>Upload Image</h1>
+
+<%= form_for(@image, url: postimage_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<%= link_to 'Back', @board_path %>
+
+<% end %>
