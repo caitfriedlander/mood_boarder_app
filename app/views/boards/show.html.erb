@@ -2,7 +2,7 @@
 <div><%= @board.description %></div>
 <div>
   <% @board.images.each do |image| %>
-    <div><%= image_tag(@image, alt: "mood board image") %></div>
+    <div><%= image_tag(image.url, size: "300x300", alt: "mood board image") %></div>
   <% end %>
 </div>
 <p>
