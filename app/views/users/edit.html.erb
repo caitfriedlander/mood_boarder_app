@@ -1,4 +1,44 @@
 <h1>Edit Your Information</h1>
-<%= render 'form' %>
+
+<%= form_for @user, url: updateusers_path, html: { multipart: true } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+    <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <% if request.original_url["edit"] %>
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </div>
+  <% end %>
+  <div class="actions"><%= f.submit %></div>
+  <% end %>
 
 <button><%= link_to 'Back', user_path(@user) %></button>
