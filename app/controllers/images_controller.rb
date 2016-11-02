@@ -19,6 +19,6 @@ class ImagesController < ApplicationController
 private
     # Implement Strong Params
     def image_params
-      params.require(:image).permit(:url, :board_id)
+      params.require(:image).permit(:url, :image, :board_id)
     end
 end

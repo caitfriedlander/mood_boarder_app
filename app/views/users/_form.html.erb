@@ -32,8 +32,11 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <% if request.original_url["edit"] %>
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+    </div>
+    <div>Or</div>
     <div class="field">
       <%= f.label :avatar %>
       <%= f.text_field :avatar %>
