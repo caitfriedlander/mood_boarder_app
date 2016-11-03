@@ -12,12 +12,34 @@
 <br>
 <p>
   <% if current_user && current_user.id == @user.to_i %>
-  <button type=""><%= link_to 'Upload Images', addimage_path %></button>
+    <button type=""><%= link_to 'Upload Images', addimage_path %></button>
     <button type=""><%= link_to 'Edit', edit_board_path %></button>
     <button type=""><%= link_to 'Delete', delete_path %></button>
   <% else %>
-    <button type=""><%= link_to 'Favorite', favorite_boards_path %></button>
+    <%- unless current_user.favorite_boards.exists?(id: @board.id) -%>
+      <button><%= link_to 'Add to favorites', favorite_boards_path(board_id: @board), method: :post %></button>
+    <%- else -%>
+      <button><%= link_to 'Remove from favorites', favorite_board_path(@board), method: :delete %></button>
+    <%- end -%>
   <% end %>
 </p>
+
+<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+
+  <div class="box col3">
+    ...
+  </div>
+
+  <div class="box col1">
+    <p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. </p>
+  </div>
+
+  <div class="box col2">
+    <p>
+      <a href="http://www.flickr.com/photos/nemoorange/3319714470/" title="Whitlow's on Wilson by nemoorange, on Flickr"><img src="http://farm4.static.flickr.com/3008/3319714470_c05a5cb5a8_m.jpg" alt="Whitlow's on Wilson" /></a>
+    </p>
+  </div>
+  ...
+</div>
 
 

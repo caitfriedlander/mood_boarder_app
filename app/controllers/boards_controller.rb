@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
   # GET /boards/1
   def show
     @board = Board.find(params[:id])
+    @favorite = Favorite.new
     @user = @board.user_id
   end
 
