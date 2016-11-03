@@ -3,11 +3,13 @@
   <div class="col-lg-8 col-sm-8 users">
       <div class="card hovercard">
           <div class="card-background">
-  <!--             <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/"> -->
-              <!-- http://lorempixel.com/850/280/people/9/ -->
           </div>
           <div class="useravatar">
+            <% if @user.avatar_file_name == nil %>
+              <%= image_tag("missing.png", :alt => "it's missing") %>
+            <% else %>
               <%= image_tag @user.avatar.url(:thumb) %>
+            <% end %>
           </div>
           <br>
           <div class="card-info"> <span class="card-title"><%= @user.username %></span>
