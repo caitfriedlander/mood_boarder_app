@@ -1,1 +1,1 @@
-bundle exec thin
+bundle exec thin start
