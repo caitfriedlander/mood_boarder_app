@@ -1,6 +1,17 @@
-All Users
-<% @users.each do |user| %>
-  <ul>
-    <li> <%= link_to user.username, user_path(id: user.id) %> </li>
-  </ul>
-<% end %>
+<h1>Explore Users</h1>
+<div class="row">
+  <div class="col-sm-6 col-md-8">
+    <div class="userlist">
+      <% @users.each do |user| %>
+        <% if user.avatar_file_name == nil %>
+          <%= image_tag("missing.png", size: "100x100", :alt => "it's missing") %>
+        <% else %>
+          <%= image_tag user.avatar.url(:thumb) %>
+        <% end %>
+        <button class="btn btn-info">
+          <%= link_to user.username, user_path(id: user.id) %>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

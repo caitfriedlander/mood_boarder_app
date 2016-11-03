@@ -1,43 +1,48 @@
-<h1> Mood Boarder</h1>
-<p>A site for making beautiful mood boards!<br>
-Upload images to create your own or browse other users' boards to get inspired!</p>
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Branding</h3>
-        <p>Collect on-brand imagery for inspiration and brand development!</p>
+<div class="container-fluid">
+  <div class="jumbotron ">
+    <div class="page-header">
+      <h1 class="logo">Mood Boarder</h1>
+    </div>
+    <p>Make mood boards! Upload images to create your own or browse other users' boards to get inspired!</p>
+    <p><button class="btn btn-info"><%= link_to 'Sign Up!', new_user_path %></button></p>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-3 col-lg-3">
+      <div class="thumbnail">
+        <%= image_tag "branding.jpg", size: "200x200>" %>
+        <div class="caption">
+          <h3>Branding</h3>
+          <p>Collect on-brand imagery for inspiration and brand development!</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Web Design</h3>
-        <p>Gather ideas and get inspired by designes you like!</p>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= image_tag "webdesign.jpg" %>
+        <div class="caption">
+          <h3>Web Design</h3>
+          <p>Gather ideas and get inspired by designes you like!</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Fashion</h3>
-        <p>Build a cohesive wardrobe that conveys your personal image!</p>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= image_tag "fashion.jpg" %>
+        <div class="caption">
+          <h3>Fashion</h3>
+          <p>Build a cohesive wardrobe that conveys your personal image!</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Interior Design</h3>
-        <p>Develop a unique look for your home!</p>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= image_tag "intdesign.jpg" %>
+        <div class="caption">
+          <h3>Interior Design</h3>
+          <p>Develop a unique look for a home or business!</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 

@@ -5,6 +5,20 @@ body {
   margin: 0;
   background: url('cork.jpg');
   background-size: 1440px 800px;
-  background-repeat:no-repeat;
+  background-repeat: repeat;
   display: compact;
+}
+.jumbotron {
+  background: url('chalkboard.jpg');
+}
+
+.logo {
+  color: white;
+}
+
+.navbar {
+  background-image: url('chalkboard.jpg');
+}
+.navbar-inner, .navbar .btn-navbar {
+  border: 0px;
 }

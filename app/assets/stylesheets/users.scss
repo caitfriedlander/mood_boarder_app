@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* USER PROFILE PAGE */
-.container {
+ .container {
   display: flex;
   justify-content: center;
-}
-.card {
+ }
+ .card {
     margin-top: 20px;
     padding: 30px;
     background-color: rgba(214, 224, 226, 0.2);
@@ -29,7 +29,7 @@
     background-color: rgba(255, 255, 255, 1);
 }
 .card.hovercard .card-background {
-    height: 130px;
+    height: 190px;
 }
 .card-background img {
     -webkit-filter: blur(25px);
@@ -44,9 +44,9 @@
 .card.hovercard .useravatar {
     position: absolute;
     top: 15px;
-    bottom: 50px;
     left: 0;
     right: 0;
+    margin-bottom: 15px;
 }
 .card.hovercard .useravatar img {
     width: 100px;
@@ -60,9 +60,10 @@
 }
 .card.hovercard .card-info {
     position: absolute;
-    bottom: 14px;
+    bottom: 25px;
     left: 0;
     right: 0;
+    margin: 10px;
 }
 .card.hovercard .card-info .card-title {
     padding:0 5px;
@@ -74,18 +75,6 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-
-.card.hovercard .card-info .user-info {
-    padding:0 5px;
-    font-size: 15px;
-    line-height: 1;
-    color: #262626;
-    background-color: rgba(255, 255, 255, 0.1);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-
 .card.hovercard .card-info {
     overflow: hidden;
     font-size: 12px;
@@ -100,6 +89,7 @@
 .btn-pref .btn {
     -webkit-border-radius:0 !important;
 }
+
 body {
   margin: 0;
   background: url('cork.jpg');

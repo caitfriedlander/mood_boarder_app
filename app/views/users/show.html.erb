@@ -3,6 +3,7 @@
   <div class="col-lg-8 col-sm-8 users">
       <div class="card hovercard">
           <div class="card-background">
+          <%= image_tag("chalkboard.jpg") %>
           </div>
           <div class="useravatar">
             <% if @user.avatar_file_name == nil %>
@@ -13,8 +14,6 @@
           </div>
           <br>
           <div class="card-info"> <span class="card-title"><%= @user.username %></span>
-          <br>
-          <span class="user-info">User description goes here.</span>
           <p>
             <% if current_user && current_user.id == @user.id %>
               <button type="button" id="editprofile" class="btn"><span class=""><%= link_to 'Edit', edit_user_path %></span></button>
