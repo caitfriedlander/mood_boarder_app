@@ -3,21 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   margin: 0;
-  background: url('cork.jpg');
+  background: url('/images/cork.jpg');
   background-size: 1440px 800px;
   background-repeat: repeat;
   display: compact;
 }
 .jumbotron {
-  background: url('chalkboard.jpg');
+  background: url('/images/chalkboard.jpg');
 }
 
-.logo {
+.jumbotron > .page-header {
   color: white;
 }
 
 .navbar {
-  background-image: url('chalkboard.jpg');
+  background-image: url('/images/chalkboard.jpg');
 }
 .navbar-inner, .navbar .btn-navbar {
   border: 0px;

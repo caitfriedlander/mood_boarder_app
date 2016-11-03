@@ -2,14 +2,14 @@
   <div class="jumbotron ">
     <div class="page-header">
       <h1 class="logo">Mood Boarder</h1>
-    </div>
     <p>Make mood boards! Upload images to create your own or browse other users' boards to get inspired!</p>
+    </div>
     <p><button class="btn btn-info"><%= link_to 'Sign Up!', new_user_path %></button></p>
   </div>
   <div class="row">
     <div class="col-sm-6 col-md-3 col-lg-3">
       <div class="thumbnail">
-        <%= image_tag "branding.jpg", size: "200x200>" %>
+        <%= image_tag "/images/branding.jpg", size: "200x200>" %>
         <div class="caption">
           <h3>Branding</h3>
           <p>Collect on-brand imagery for inspiration and brand development!</p>
@@ -18,7 +18,7 @@
     </div>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <%= image_tag "webdesign.jpg" %>
+        <%= image_tag "/images/webdesign.jpg" %>
         <div class="caption">
           <h3>Web Design</h3>
           <p>Gather ideas and get inspired by designes you like!</p>
@@ -27,7 +27,7 @@
     </div>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <%= image_tag "fashion.jpg" %>
+        <%= image_tag "/images/fashion.jpg" %>
         <div class="caption">
           <h3>Fashion</h3>
           <p>Build a cohesive wardrobe that conveys your personal image!</p>
@@ -36,7 +36,7 @@
     </div>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <%= image_tag "intdesign.jpg" %>
+        <%= image_tag "/images/intdesign.jpg" %>
         <div class="caption">
           <h3>Interior Design</h3>
           <p>Develop a unique look for a home or business!</p>
