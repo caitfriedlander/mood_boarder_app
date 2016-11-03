@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   patch 'users/:id' => 'users#update', as: :updateusers
 
-  resources :favorite_boards, only: [:create, :destroy]
+  resources :favorite_boards, only: [:create, :destroy, :show]
 
-  resources :followed_users, only: [:create, :destroy]
+  resources :followed_users, only: [:create, :destroy, :show]
 
   resources :boards
 

@@ -14,6 +14,12 @@ class FollowedUsersController < ApplicationController
     redirect_to @user, notice: 'User was unfollowed'
   end
 
+  def show
+
+    @following = Follower.find(params[:followed])
+    @follower = Follower.find(params[:user])
+  end
+
   private
 
   def set_follower
