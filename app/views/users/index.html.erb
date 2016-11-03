@@ -4,7 +4,7 @@
     <div class="userlist">
       <% @users.each do |user| %>
         <% if user.avatar_file_name == nil %>
-          <%= image_tag("/images/missing.png", size: "100x100", :alt => "it's missing") %>
+          <%= image_tag("missing.png", size: "100x100", :alt => "it's missing") %>
         <% else %>
           <%= image_tag user.avatar.url(:thumb) %>
         <% end %>
