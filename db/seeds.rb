@@ -11,12 +11,12 @@ Image.destroy_all
 
 User.create(username: "Cait1", password: 'abc123',
       password_confirmation: 'abc123', email: "cati@cait.com",
-      name: "Cait", avatar: Faker::Avatar.image("my-own-slug", "50x50"))
+      name: "Cait")
 
 100.times do
     User.create(username: Faker::Internet.user_name, password: 'abc123',
       password_confirmation: 'abc123', email: Faker::Internet.email,
-      name: Faker::Name.name, avatar: Faker::Avatar.image("my-own-slug", "50x50"))
+      name: Faker::Name.name)
 end
 
 500.times do
