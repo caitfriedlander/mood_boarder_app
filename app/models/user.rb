@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :boards, dependent: :destroy
   has_many :images, through: :boards
 
-  has_attached_file :avatar, styles: { thumb: "50x50>" }
+  has_attached_file :avatar, styles: { thumb: "100x100>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   # Verify that an email exists and that it does not already exist in the db

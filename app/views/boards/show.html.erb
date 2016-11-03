@@ -1,9 +1,13 @@
 <div><%= @board.title %></div>
 <div><%= @board.description %></div>
-<div>
-  <% @board.images.each do |image| %>
-    <div><%= image_tag(image.image, size: "300x300", alt: "mood board image") %></div>
-  <% end %>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <% @board.images.each do |image| %>
+        <div><%= image_tag(image.image, size: "300x300", alt: "mood board image") %></div>
+      <% end %>
+    </a>
+  </div>
 </div>
 <br>
 <p>
