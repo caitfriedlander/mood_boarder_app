@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
 
   has_many :favorites
   has_many :favorite_boards, through: :favorites, source: :favorited, source_type: 'Board'
+
+  has_many :followers
+  has_many :followed_users, through: :followers, source: :followed, source_type: 'User'
+
   has_many :boards, dependent: :destroy
   has_many :images, through: :boards
 

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :favorite_boards, only: [:create, :destroy]
 
+  resources :followed_users, only: [:create, :destroy]
+
   resources :boards
 
   resources :images, only: [:new, :create, :destroy]
