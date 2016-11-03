@@ -27,6 +27,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav">
+            <li><%= link_to "Users", users_path %>
           <% if current_user %>
             <li><%= link_to current_user.username, current_user %></li>
             <li><%= link_to 'Log Out', session_path('dummy'), method: :delete %></li>

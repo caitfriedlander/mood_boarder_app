@@ -1,1 +1,6 @@
-A list of users
+All Users
+<% @users.each do |user| %>
+  <ul>
+    <li> <%= link_to user.username, user_path(id: user.id) %> </li>
+  </ul>
+<% end %>
