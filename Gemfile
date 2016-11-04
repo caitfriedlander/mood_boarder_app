@@ -30,7 +30,6 @@ gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'bootstrap_form'  # if you want bootstrap forms!
 
-gem "twitter-bootstrap-rails"
 
 gem 'faker'
 
