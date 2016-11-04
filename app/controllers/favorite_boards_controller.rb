@@ -18,7 +18,6 @@ class FavoriteBoardsController < ApplicationController
     @favorite = Favorite.find(params[:board_id])
     @board = Board.find(params[:id])
     @favboard = @board.id(@favorite)
-    @favboardname = @favboard.title
   end
 
   private

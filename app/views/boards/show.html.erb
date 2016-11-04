@@ -1,14 +1,14 @@
-<div><%= @board.title %></div>
-<div><%= @board.description %></div>
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
+<h3><%= @board.title %></h3>
+<h5><%= @board.description %></h5>
+<div class="gallery">
+  <% link_to image_path%>
+    <figure>
       <% @board.images.each do |image| %>
-        <div><%= image_tag(image.image, size: "300x300", alt: "mood board image") %></div>
+        <%= image_tag(image.image, size: "250x250", alt: "mood board image") %>
       <% end %>
-    </a>
-  </div>
+    </figure>
 </div>
+
 <br>
 <p>
   <% if current_user && current_user.id == @user.to_i %>
@@ -23,4 +23,3 @@
     <%- end -%>
   <% end %>
 </p>
-
