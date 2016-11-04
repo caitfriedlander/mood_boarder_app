@@ -1,25 +1,29 @@
-<h3><%= @board.title %></h3>
-<h5><%= @board.description %></h5>
-<div class="gallery">
-  <% link_to image_path%>
-    <figure>
-      <% @board.images.each do |image| %>
-        <%= image_tag(image.image, size: "250x250", alt: "mood board image") %>
-      <% end %>
-    </figure>
-</div>
+<div class="thingholder">
+  <div class="aboutsenction">
+    <h3><%= @board.title %></h3>
+    <h5><%= @board.description %></h5>
+  </div>
+  <div class="gallery">
+    <% link_to image_path%>
+      <figure>
+        <% @board.images.each do |image| %>
+          <%= image_tag(image.image, size: "250x250", alt: "mood board image") %>
+        <% end %>
+      </figure>
+  </div>
 
-<br>
-<p>
-  <% if current_user && current_user.id == @user.to_i %>
-    <button type=""><%= link_to 'Upload Images', addimage_path %></button>
-    <button type=""><%= link_to 'Edit', edit_board_path %></button>
-    <button type=""><%= link_to 'Delete', delete_path %></button>
-  <% else %>
-    <%- unless current_user.favorite_boards.exists?(id: @board.id) -%>
-      <button><%= link_to 'Add to favorites', favorite_boards_path(board_id: @board), method: :post %></button>
-    <%- else -%>
-      <button><%= link_to 'Remove from favorites', favorite_board_path(@board), method: :delete %></button>
-    <%- end -%>
-  <% end %>
-</p>
+  <br>
+  <p>
+    <% if current_user && current_user.id == @user.to_i %>
+      <button type=""><%= link_to 'Upload Images', addimage_path %></button>
+      <button type=""><%= link_to 'Edit', edit_board_path %></button>
+      <button type=""><%= link_to 'Delete', delete_path %></button>
+    <% else %>
+      <%- unless current_user.favorite_boards.exists?(id: @board.id) -%>
+        <button><%= link_to 'Add to favorites', favorite_boards_path(board_id: @board), method: :post %></button>
+      <%- else -%>
+        <button><%= link_to 'Remove from favorites', favorite_board_path(@board), method: :delete %></button>
+      <%- end -%>
+    <% end %>
+  </p>
+</div>

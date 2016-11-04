@@ -5,3 +5,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+.aboutsection {
+  justify-content: center;
+}
+.thingholder {
+  border-radius: 4px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
