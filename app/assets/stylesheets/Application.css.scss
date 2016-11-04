@@ -20,7 +20,7 @@
 
 body {
   margin: 0;
-  background-image: url('/images/cork.jpg');
+  background-image: asset-url("images/cork.jpg");
   background-size: 1440px 800px;
   background-repeat:no-repeat;
   display: compact;

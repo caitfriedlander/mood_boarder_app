@@ -1,0 +1,111 @@
+/* USER PROFILE PAGE */
+/* line 6, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 10, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: rgba(214, 224, 226, 0.2);
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 24, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard {
+  position: relative;
+  padding-top: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  background-color: white;
+}
+
+/* line 32, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .card-background {
+  height: 190px;
+}
+
+/* line 35, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card-background img {
+  -webkit-filter: blur(25px);
+  -moz-filter: blur(25px);
+  -o-filter: blur(25px);
+  -ms-filter: blur(25px);
+  filter: blur(25px);
+  margin-left: -100px;
+  margin-top: -200px;
+  min-width: 130%;
+}
+
+/* line 45, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .useravatar {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin-bottom: 15px;
+}
+
+/* line 52, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .useravatar img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+/* line 62, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .card-info {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  margin: 10px;
+}
+
+/* line 69, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .card-info .card-title {
+  padding: 0 5px;
+  font-size: 20px;
+  line-height: 1;
+  color: #262626;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 79, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .card-info {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 20px;
+  color: #737373;
+  text-overflow: ellipsis;
+}
+
+/* line 86, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.card.hovercard .bottom {
+  padding: 0 20px;
+  margin-bottom: 17px;
+}
+
+/* line 90, /Users/balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.btn-pref .btn {
+  -webkit-border-radius: 0 !important;
+}
