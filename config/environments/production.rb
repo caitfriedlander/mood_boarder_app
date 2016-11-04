@@ -19,7 +19,7 @@ Rails.application.configure do
   config.serve_static_files = true
   config.assets.compile = true
 
-  config.assets.precompile =  ['*.js', '*.css', '*.scss', '*.css.erb']
+  config.assets.precompile =  ['*.js', '*.css', 'application.css.scss']
 
   # Code is not reloaded between requests.
   config.cache_classes = true
