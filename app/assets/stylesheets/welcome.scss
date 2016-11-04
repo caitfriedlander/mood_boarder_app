@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron {
-  background-image: image-url('chalkboard.jpg');
+  background-image: url('/images/chalkboard.jpg');
 }
 
 .jumbotron > .page-header {
@@ -11,7 +11,7 @@
 }
 
 .navbar {
-  background-image: image-url('chalkboard.jpg');
+  background-image: url('/images/chalkboard.jpg');
 }
 .navbar-inner, .navbar .btn-navbar {
   border: 0px;
