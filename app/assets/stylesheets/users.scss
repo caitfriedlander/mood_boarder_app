@@ -16,6 +16,9 @@
   height: 200px;
   color: white;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .face {
@@ -35,4 +38,12 @@
 }
 .headline {
   margin: 0;
+}
+
+.userlist {
+  margin: 10px;
+}
+
+.indexheader {
+  text-align: center;
 }
