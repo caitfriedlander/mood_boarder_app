@@ -14,6 +14,13 @@ class FavoriteBoardsController < ApplicationController
     redirect_to @board, notice: 'Removed from favorites!'
   end
 
+  def show
+    @favorite = Favorite.find(params[:board_id])
+    @board = Board.find(params[:id])
+    @favboard = @board.id(@favorite)
+    @favboardname = @favboard.title
+  end
+
   private
 
   def set_board

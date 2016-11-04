@@ -1,89 +1,74 @@
 <!-- Profile Page -->
 <div class="container">
-  <div class="col-lg-8 col-sm-8 users">
-      <div class="card hovercard">
-          <div class="card-background">
-          <%= image_tag("chalkboard.jpg") %>
-          </div>
-          <div class="useravatar">
-            <% if @user.avatar_file_name == nil %>
-              <%= image_tag("missing.png", :alt => "it's missing") %>
-            <% else %>
-              <%= image_tag @user.avatar.url(:thumb) %>
-            <% end %>
-          </div>
-          <br>
-          <div class="card-info"> <span class="card-title"><%= @user.username %></span>
-          <p>
-            <% if current_user && current_user.id == @user.id %>
-              <button type="button" id="editprofile" class="btn"><span class=""><%= link_to 'Edit', edit_user_path %></span></button>
-              <button type="button" id="editprofile" class="btn"><span class=""><%= link_to 'Delete', delete_path %></span></button>
-            <% else %>
-              <%- unless current_user.followed_users.exists?(id: @user.id) -%>
-                <button type="button" class="btn"><%= link_to 'Follow', followed_users_path(user_id: @user), method: :post %> </button>
-              <%- else -%>
-                <button type="button" class="btn"><%= link_to 'Unfollow', followed_user_path(@user), method: :delete %> </button>
-              <%- end -%>
-            <% end %>
-          </p>
-          </div>
-      </div>
-      <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-          <div class="btn-group" role="group">
-              <button type="button" id="boards" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>
-                  <div class="hidden-xs">Boards</div>
-              </button>
-          </div>
-          <div class="btn-group" role="group">
-              <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                  <div class="hidden-xs">Favorites</div>
-              </button>
-          </div>
-          <div class="btn-group" role="group">
-              <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                  <div class="hidden-xs">Following</div>
-              </button>
-          </div>
-          <div class="btn-group" role="group">
-              <button type="button" id="followers" class="btn btn-default" href="#tab4" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                  <div class="hidden-xs">Followers</div>
-              </button>
-          </div>
-      </div>
-    <div class="well">
-      <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
-          <ul>
-            <% @user.boards.each do |board| %>
-             <li><%= link_to(board.title, board_path(board.id)) %></li>
-            <% end %>
-          </ul>
-          <% if current_user && current_user.id == @user.id %>
-           <button type="button" id="boards" class="btn" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><%= link_to 'New Board', new_board_path %></button>
-          <% end %>
-        </div>
-        <div class="tab-pane fade in" id="tab2">
-          <h3>Fave Boards List goes here</h3>
 
-
-        </div>
-        <div class="tab-pane fade in" id="tab3">
-          <h3>following list goes here</h3>
-          <% @user.followed_users do |followed_user| %>
-            <ul>
-              <li> <%= link_to followed_user.username, followed_user_path(id: followed_user.id) %> </li>
-            </ul>
-          <% end %>
-        </div>
-        <div class="tab-pane fade in" id="tab4">
-          <h3>follower list</h3>
-            <% @user.followers.each do |follower| %>
-            <ul>
-              <li> <%= link_to follower_user.username, user_path(id: user.id) %> </li>
-            </ul>
-          <% end %>
-        </div>
+  <div class="jumbotron">
+    <div class="page-header">
+      <div class="container">
+        <% if @user.avatar_file_name == nil %>
+          <%= image_tag("missing.png", :alt => "it's missing") %>
+        <% else %>
+          <%= image_tag @user.avatar.url(:thumb) %>
+        <% end %>
       </div>
+    <h3 class="card-title"><%= @user.username %></h3>
+      <p>
+        <% if current_user && current_user.id == @user.id %>
+          <button type="button" id="editprofile" class="btn"><span class=""><%= link_to 'Edit', edit_user_path %></span></button>
+          <button type="button" id="editprofile" class="btn"><span class=""><%= link_to 'Delete', delete_path %></span></button>
+        <% else %>
+          <%- unless current_user.followed_users.exists?(id: @user.id) -%>
+            <button type="button" class="btn"><%= link_to 'Follow', followed_users_path(user_id: @user), method: :post %> </button>
+          <%- else -%>
+            <button type="button" class="btn"><%= link_to 'Unfollow', followed_user_path(@user), method: :delete %> </button>
+          <%- end -%>
+        <% end %>
+      </p>
+  </div>
+  <div class="container">
+    <div class="content-container board-container">
+      <ul>
+        <h3>Boards</h3>
+        <% @user.boards.each do |board| %>
+         <li><%= link_to(board.title, board_path(board.id)) %></li>
+        <% end %>
+      </ul>
+      <% if current_user && current_user.id == @user.id %>
+       <button type="button" id="boards" class="btn" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><%= link_to 'New Board', new_board_path %></button>
+      <% end %>
     </div>
   </div>
+
+  <div class="container">
+    <div class="content-container favorite-container">
+      <ul>
+        <h3>Favorites</h3>
+        <% @user.favorites.each do |favorite| %>
+         <li><%= link_to(@favboardname, board_url) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-container followed-container">
+      <h3>Following</h3>
+      <% @user.followed_users do |followed_user| %>
+        <ul>
+          <li> <%= link_to followed_user.username, followed_user_path(id: followed_user.id) %> </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-container followed-container">
+      <h3>Followers</h3>
+        <% @user.followers.each do |follower| %>
+        <ul>
+          <li> <%= link_to follower, user_path(follower[:id]) %> </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
 </div>
