@@ -1,0 +1,56 @@
+/* USER PROFILE PAGE */
+/* line 7, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.container {
+  border-radius: 4px;
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* line 15, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.boardcontainer {
+  background-image: url("/images/chalkboard.jpg");
+  height: 200px;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 25, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.face {
+  width: 22%;
+}
+
+/* line 28, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.face img {
+  float: left;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* line 34, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.text {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* line 40, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.headline {
+  margin: 0;
+}
+
+/* line 44, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.userlist {
+  margin: 10px;
+}
+
+/* line 48, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/users.scss */
+.indexheader {
+  text-align: center;
+}

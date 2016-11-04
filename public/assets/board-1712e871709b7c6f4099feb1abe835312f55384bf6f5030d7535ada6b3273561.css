@@ -1,0 +1,19 @@
+/* line 4, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/board.scss */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 8, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/board.scss */
+.aboutsection {
+  justify-content: center;
+}
+
+/* line 11, /Users/Balthazar/ga/wdi/mood_boarder_app/app/assets/stylesheets/board.scss */
+.thingholder {
+  border-radius: 4px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
